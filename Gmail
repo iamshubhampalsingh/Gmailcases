@@ -1,0 +1,3101 @@
+###############################################Gmail01#########################################################################
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.168.126:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+
+receiver_device(resourceId="com.google.android.gm:id/welcome_tour_skip").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/setup_addresses_add_another").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/account_setup_label", text="Google").click()
+time.sleep(10)
+receiver_device.xpath('//*[@resource-id="view_container"]/android.view.View[2]/android.view.View[1]/android.view.View[1]/android.widget.TextView[2]').set_text("shubhampalsingh1993@gmail.com")
+time.sleep(5)
+receiver_device(text="Next").click()
+time.sleep(5)
+receiver_device.xpath('//android.widget.EditText').set_text("ShubhaM@93")
+time.sleep(5)
+receiver_device(text="Next").click()
+time.sleep(5)
+receiver_device(text="Next").click()
+time.sleep(5)
+receiver_device(text="I agree").click()
+time.sleep(5)
+receiver_device(text="More").click()
+time.sleep(5)
+receiver_device(text="Accept").click()
+time.sleep(5)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/owner"]/android.widget.LinearLayout[1]').click()
+time.sleep(2)
+print("Gmail working properly")
+
+########################################################Gmail02##############################################################
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.168.126:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(description="Open navigation drawer").click()
+time.sleep(2)
+if receiver_device(resourceId="com.google.android.gm:id/hub_drawer_label_title", text="Primary").exists():
+    print("The priority of inbox is default")
+else:
+    print("The priority of inbox is not default")
+
+##########################################Gmail03#############################################################################
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.168.126:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/compose_button").click()
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("shubhampalsingh385@gmail.com")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/peoplekit_listview_contact_method").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/subject").set_text("welcome mail")
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/wc_body_layout"]/android.webkit.WebView[1]').set_text("hello i am shubham pal singh")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/send").click()
+
+##############################################Gmail04##########################################################################
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.168.126:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/compose_button").click()
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("shubhampalsingh385@gmail.com")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/peoplekit_listview_contact_method").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/subject").set_text("welcome mail")
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/wc_body_layout"]/android.webkit.WebView[1]').set_text("hello i am shubham pal singh")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/add_attachment").click()
+time.sleep(2)
+receiver_device.xpath('//android.widget.ListView/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]').click()
+time.sleep(2)
+receiver_device(text="Images").click()
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.documentsui:id/dir_list"]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.cardview.widget.CardView[1]').click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.documentsui:id/action_menu_select").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/send").click()
+
+########################################################Gamil05#############################################################
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.168.126:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/compose_button").click()
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("shubhampalsingh385@gmail.com")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/peoplekit_listview_contact_method").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/subject").set_text("welcome mail")
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/wc_body_layout"]/android.webkit.WebView[1]').set_text("hello i am shubham pal singh")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/add_attachment").click()
+time.sleep(2)
+receiver_device.xpath('//android.widget.ListView/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]').click()
+
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.documentsui:id/dir_list"]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]').click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/add_attachment").click()
+time.sleep(2)
+receiver_device.xpath('//android.widget.ListView/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]').click()
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.documentsui:id/dir_list"]/android.widget.LinearLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]').click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/send").click()
+
+##########################################################Gmail06##############################################################
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.168.126:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/compose_button").click()
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("shubhampalsingh385@gmail.com")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/peoplekit_listview_contact_method").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/subject").set_text("welcome mail")
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/wc_body_layout"]/android.webkit.WebView[1]').set_text("hello i am shubham pal singh")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/add_attachment").click()
+time.sleep(2)
+receiver_device.xpath('//android.widget.ListView/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]').click()
+
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.documentsui:id/dir_list"]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]').click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/add_attachment").click()
+time.sleep(2)
+receiver_device.xpath('//android.widget.ListView/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]').click()
+time.sleep(2)
+receiver_device(resourceId="android:id/title", text="Photos").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.apps.photos:id/title", text="Camera").click()
+time.sleep(2)
+receiver_device(description="Video taken on 26-Jul-2023 12:10:23 pm").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.apps.photos:id/photos_overflow_icon").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/send").click()
+
+######################################################Gmail07##################################################################
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.168.126:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/compose_button").click()
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("shubhampalsingh385@gmail.com")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/peoplekit_listview_contact_method").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/subject").set_text("welcome mail")
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/wc_body_layout"]/android.webkit.WebView[1]').set_text("hello i am shubham pal singh")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/add_attachment").click()
+time.sleep(2)
+receiver_device.xpath('//android.widget.ListView/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]').click()
+time.sleep(2)
+receiver_device(resourceId="com.android.systemui:id/back").click()
+time.sleep(2)
+receiver_device(resourceId="com.android.systemui:id/back").click()
+time.sleep(2)
+print(message saved as draft)
+
+##################################################Gmail08######################################################################
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.168.126:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/subject", text="Your Premium Horoscope Report By Fortune Teller -").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/reply").click()
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/wc_body_layout"]/android.webkit.WebView[1]').set_text("hello")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/send").click()
+time.sleep(2)
+print("Email replied")
+
+######################################################Gmail09###################################################################
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.168.126:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/subject", text="Your Premium Horoscope Report By Fortune Teller -").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/reply").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/add_cc_bcc").click()
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_bar_cc"]/android.widget.RelativeLayout[1]/android.view.ViewGroup[1]/android.widget.EditText[1]').set_text("shubhampalsingh1993@gmail.com")
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_listview_flattened_row"]/android.widget.RelativeLayout[2]').click()
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/wc_body_layout"]/android.webkit.WebView[1]').set_text("hello")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/send").click()
+time.sleep(2)
+print("Email replied with CC")
+
+###############################################Gmail10############################################################################3
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.168.126:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/subject", text="Your Premium Horoscope Report By Fortune Teller -").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/overflow").click()
+time.sleep(2)
+receiver_device.xpath('//android.widget.ListView/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]').click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/send").click()
+time.sleep(2)
+print("Email replied with Reply all")
+
+#######################################################Gmail11###############################################################
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.168.126:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/senders", text="MONT BLANC").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/overflow").click()
+time.sleep(2)
+receiver_device.xpath('//android.widget.ListView/android.widget.LinearLayout[2]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]').click()
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("shubhampalsingh385@gmail.com")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/send").click()
+time.sleep(2)
+print("Email replied with Reply all")
+
+###################################################Gmai12#####################################################################
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.168.126:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/senders", text="IDFC FIRST Bank").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/overflow").click()
+time.sleep(2)
+receiver_device.xpath('//android.widget.ListView/android.widget.LinearLayout[2]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]').click()
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("shubhampalsingh385@gmail.com")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/add_attachment").click()
+time.sleep(2)
+receiver_device.xpath('//android.widget.ListView/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]').click()
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.documentsui:id/dir_list"]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]').click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/send").click()
+time.sleep(2)
+print("Email replied with forward and attachments")
+
+#####################################################Gmail13################################################################
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.168.126:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(description="Open navigation drawer").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/hub_drawer_label_title", text="Sent").click()
+time.sleep(2)
+# Scroll to the email with the specified timestamp "11:56 am"
+receiver_device(scrollable=True).scroll.to(resourceId="com.google.android.gm:id/viewified_conversation_item_view", text=", , , To: Shubham, , welcome mail, hello i am shubham pal singh, ,  at 11:56 am")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/viewified_conversation_item_view", text=", , , To: Shubham, , welcome mail, hello i am shubham pal singh, ,  at 11:56 am").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/overflow").click()
+time.sleep(2)
+receiver_device.xpath('//android.widget.ListView/android.widget.LinearLayout[2]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]').click()
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("spsx2@rediffmail.com")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/send").click()
+
+####################################################Gmail14####################################################################
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.168.126:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/senders", text="IITIIMShaadi").long_click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/senders", text="YS Buzz").long_click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/senders", text="Amazon Web Services").long_click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/star").click()
+time.sleep(2)
+receiver_device.xpath('//android.widget.ListView/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]').click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/folder_name", text="Unwanted").click()
+time.sleep(2)
+print("The selected mails are moved to unwanted")
+
+########################################################Gmail15#################################################################
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Turn on the receiver device's screen
+subprocess.run(receiver_turn_on_command)
+
+# Execute the ADB command to start the Gmail app
+subprocess.run(adb_command)
+time.sleep(2)
+
+# Click on the search bar to activate it
+receiver_device(resourceId="com.google.android.gm:id/open_search_bar_text_view").click()
+time.sleep(2)
+
+# Set text in the search bar
+receiver_device.send_keys("Jeevansathi Matches")
+time.sleep(2)
+if receiver_device(text="Jeevansathi Matches").exists():
+    print("Succesful match of search")
+else:
+    print("Not succesful match of search")
+
+#############################################################Gmail17###########################################################
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Turn on the receiver device's screen
+subprocess.run(receiver_turn_on_command)
+
+# Execute the ADB command to start the Gmail app
+subprocess.run(adb_command)
+time.sleep(2)
+
+receiver_device(description="Open navigation drawer").click()
+time.sleep(2)
+receiver_device(scrollable=True).scroll.toEnd()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/hub_drawer_label_title", text="Help and feedback").click()
+time.sleep(5)
+receiver_device(resourceId="com.google.android.gms:id/gh_feedback_text").click()
+time.sleep(2)
+receiver_device(text="Get started").click()
+time.sleep(2)
+receiver_device(resourceId="android:id/log_access_dialog_allow_button").click()
+time.sleep(2)
+receiver_device(description="Make a suggestion").click()
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gms:id/dynamic_ui_main_recyclerView"]/android.support.v7.widget.RecyclerView[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]').set_text("Its great product")
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gms:id/dynamic_ui_main_recyclerView"]/android.support.v7.widget.RecyclerView[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]').click()
+
+######################################################Gmail18##################################################################
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = ""
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Turn on the receiver device's screen
+subprocess.run(receiver_turn_on_command)
+
+# Execute the ADB command to start the Gmail app
+subprocess.run(adb_command)
+time.sleep(2)
+
+receiver_device(description="Open navigation drawer").click()
+time.sleep(2)
+receiver_device(scrollable=True).scroll.toEnd()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/hub_drawer_label_title", text="Settings").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/title", text="shubhampalsingh1993@gmail.com").click()
+time.sleep(2)
+receiver_device(resourceId="android:id/title", text="Notification sounds").click()
+time.sleep(2)
+receiver_device(resourceId="android:id/title", text="Notification sound").click()
+
+###################################################Gmail19####################################################################
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Turn on the receiver device's screen
+subprocess.run(receiver_turn_on_command)
+
+# Execute the ADB command to start the Gmail app
+subprocess.run(adb_command)
+time.sleep(2)
+
+receiver_device(description="Open navigation drawer").click()
+time.sleep(2)
+receiver_device(scrollable=True).scroll.toEnd()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/hub_drawer_label_title", text="Settings").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/title", text="shubhampalsingh1993@gmail.com").click()
+time.sleep(2)
+# Scroll to "Mobile Signature" option
+receiver_device(scrollable=True).scroll.to(text="Mobile signature")
+time.sleep(2)
+receiver_device(resourceId="android:id/title", text="Mobile signature").click()
+time.sleep(2)
+receiver_device(resourceId="android:id/edit").set_text("ShubhamPalSingh")
+time.sleep(2)
+receiver_device(resourceId="android:id/button1").click()
+time.sleep(2)
+print("The signature is set")
+
+############################################################Gmail20###########################################################
+
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.168.126:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/senders", text="IITIIMShaadi").long_click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/senders", text="YS Buzz").long_click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/senders", text="Amazon Web Services").long_click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/star").click()
+time.sleep(2)
+receiver_device.xpath('//android.widget.ListView/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]').click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/folder_name", text="Unwanted").click()
+time.sleep(2)
+print("The selected mails are moved to unwanted")
+
+##################################################Gmail21####################################################################
+
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Turn on the receiver device's screen
+subprocess.run(receiver_turn_on_command)
+
+# Execute the ADB command to start the Gmail app
+subprocess.run(adb_command)
+time.sleep(2)
+
+receiver_device(resourceId="com.google.android.gm:id/senders", text="PDF Statement").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/delete").click()
+print("The mail is deleted")
+
+######################################################Gmail22##################################################################
+
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Turn on the receiver device's screen
+subprocess.run(receiver_turn_on_command)
+
+# Execute the ADB command to start the Gmail app
+subprocess.run(adb_command)
+time.sleep(2)
+
+receiver_device(resourceId="com.google.android.gm:id/senders", text="Wipro Careers").long_click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/senders", text="Work From Home New Update").long_click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/delete").click()
+print("The mail is deleted")
+
+##########################################################Gmail23##############################################################
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Turn on the receiver device's screen
+subprocess.run(receiver_turn_on_command)
+
+# Execute the ADB command to start the Gmail app
+subprocess.run(adb_command)
+time.sleep(2)
+
+receiver_device(resourceId="com.google.android.gm:id/og_apd_internal_image_view").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/og_text_card_title", text="Add another account").click()
+timesleep(2)
+receiver_device(resourceId="com.google.android.gm:id/account_setup_label", text="Google").click()
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="view_container"]/android.view.View[2]/android.view.View[1]/android.view.View[1]/android.widget.TextView[2]').set_text("shubhampalsingh385@gmail.com")
+time.sleep(2)
+receiver_device(text="Next").click()
+time.sleep(2)
+receiver_device.xpath('//android.widget.EditText').set_text("Shubham1993@")
+time.sleep(2)
+receiver_device(text="Next").click()
+time.sleep(2)
+receiver_device(text="Yes, I’m in").click()
+time.sleep(2)
+receiver_device(text="I agree").click()
+
+##########################################################Gmail24############################################################
+
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.168.126:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(resorceId="com.google.android.gm:id/star").click()
+time.sleep(2)
+receiver_device(description="Open navigation drawer").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/hub_drawer_label_title", text="Starred").click()
+print("The starred mails are opened")
+
+#######################################################Gmail27################################################################
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.168.126:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+
+receiver_device(resourceId="com.google.android.gm:id/welcome_tour_skip").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/setup_addresses_add_another").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/account_setup_label", text="Google").click()
+time.sleep(10)
+receiver_device.xpath('//*[@resource-id="view_container"]/android.view.View[2]/android.view.View[1]/android.view.View[1]/android.widget.TextView[2]').set_text("shubhampalsingh1993@gmail.com")
+time.sleep(5)
+receiver_device(text="Next").click()
+time.sleep(5)
+receiver_device.xpath('//android.widget.EditText').set_text("ShubhaM@93")
+time.sleep(5)
+receiver_device(text="Next").click()
+time.sleep(5)
+receiver_device(text="Next").click()
+time.sleep(5)
+receiver_device(text="I agree").click()
+time.sleep(5)
+receiver_device(text="More").click()
+time.sleep(5)
+receiver_device(text="Accept").click()
+time.sleep(5)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/owner"]/android.widget.LinearLayout[1]').click()
+time.sleep(2)
+print("Gmail working properly")
+
+###################################################################Gmail28###################################################
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Turn on the receiver device's screen
+subprocess.run(receiver_turn_on_command)
+
+# Execute the ADB command to start the Gmail app
+subprocess.run(adb_command)
+time.sleep(2)
+
+receiver_device(resourceId="com.google.android.gm:id/og_apd_internal_image_view").click()
+time.sleep(2)
+if receiver_device(resourceId="com.google.android.gm:id/og_secondary_account_information", text="shubhampalsingh1993@gmail.com").exists():
+    print("The default mail is shubhampalsingh1993@gmail.com")
+else:
+    print("The default mail is not shubhampalsingh1993@gmail.com")
+
+########################################################Gmail29#################################################################
+
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.168.126:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/compose_button").click()
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("shubhampalsingh385@gmail.com")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/peoplekit_listview_contact_method").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/subject").set_text("welcome mail")
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/wc_body_layout"]/android.webkit.WebView[1]').set_text("hello i am shubham pal singh")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/send").click()
+
+###############################################################Gmail30########################################################
+
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+receiver_device.long_click(0.455, 0.587)
+time.sleep(2)
+receiver_device(text="Widgets").click()
+time.sleep(2)
+# Scroll to find the Gmail app icon
+scrollable_container = receiver_device(scrollable=True)
+gmail_app_icon = None
+
+# Loop through the scrollable container to find the Gmail app icon
+for _ in range(5):  # Limit the number of scroll attempts
+    gmail_app_icon = receiver_device(resourceId="com.android.launcher3:id/app_title", text="Gmail")
+    if gmail_app_icon.exists:
+        break
+    scrollable_container.swipe("up")
+    time.sleep(1)
+
+# Check if the Gmail app icon was found
+if gmail_app_icon.exists:
+    gmail_app_icon.click()
+else:
+    print("Gmail app icon not found.")
+time.sleep(2)
+# Long click on the element with resourceId="com.google.android.gm:id/widget_folder"
+widget_folder_element = receiver_device(resourceId="com.google.android.gm:id/widget_folder")
+widget_folder_element.long_click(duration=5)  # Duration is in milliseconds (5000 milliseconds = 5 seconds)
+time.sleep(2)  # Wait for the context menu to appear after the long click
+
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/mailbox_name", text="shubhampalsingh1993@gmail.com").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/name", text="Primary").click()
+
+##################################################Gmail31#####################################################################
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+receiver_device(resourceId="com.google.android.gm:id/widget_folder").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/compose_button").click()
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("shubhampalsingh385@gmail.com")
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_listview_flattened_row"]/android.widget.RelativeLayout[2]').click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/subject").set_text("hello world")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/send").click()
+
+######################################################Gmail32###################################################################
+
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app on the sender device
+adb_command = ["adb", "-s", "cf611ff9", "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command to open the Gmail app
+subprocess.run(adb_command)
+
+sender_device(resourceId="com.google.android.gm:id/compose_button").click()
+time.sleep(2)
+sender_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("shubhampalsingh385@gmail.com")
+time.sleep(2)
+sender_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_listview_flattened_row"]/android.widget.RelativeLayout[2]').click()
+time.sleep(2)
+sender_device.xpath('//*[@resource-id="com.google.android.gm:id/wc_body_layout"]/android.webkit.WebView[1]').set_text("hello world")
+time.sleep(2)
+sender_device(resourceId="com.google.android.gm:id/send").click()
+
+time.sleep(5)
+receiver_device(resourceId="com.google.android.gm:id/widget_folder").click()
+time.sleep(2)
+if receiver_device(text="Shubham Pal Singh").exists():
+    print("Email recieved from shubham pal singh")
+else:
+    print("Email not recieved from shubham pal singh")
+####################################################### Gmail33 ################################################################
+
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+receiver_device.long_click(0.455, 0.587)
+time.sleep(2)
+receiver_device(text="Widgets").click()
+time.sleep(2)
+# Scroll to find the Gmail app icon
+scrollable_container = receiver_device(scrollable=True)
+gmail_app_icon = None
+
+# Loop through the scrollable container to find the Gmail app icon
+for _ in range(5):  # Limit the number of scroll attempts
+    gmail_app_icon = receiver_device(resourceId="com.android.launcher3:id/app_title", text="Gmail")
+    if gmail_app_icon.exists:
+        break
+    scrollable_container.swipe("up")
+    time.sleep(1)
+
+# Check if the Gmail app icon was found
+if gmail_app_icon.exists:
+    gmail_app_icon.click()
+else:
+    print("Gmail app icon not found.")
+time.sleep(2)
+# Long click on the element with resourceId="com.google.android.gm:id/widget_folder"
+widget_folder_element = receiver_device(resourceId="com.google.android.gm:id/widget_folder")
+widget_folder_element.long_click(duration=5)  # Duration is in milliseconds (5000 milliseconds = 5 seconds)
+time.sleep(2)  # Wait for the context menu to appear after the long click
+
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/mailbox_name", text="shubhampalsingh1993@gmail.com").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/name", text="Primary").click()
+
+#########################################################Gmail35################################################################
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+receiver_device(resourceId="com.google.android.gm:id/widget_header").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/compose_button").click()
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("shubhampalsingh1993@gmail.com")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/send").click()
+
+###################################################Gmail36####################################################################
+
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app on the sender device
+adb_command = ["adb", "-s", "cf611ff9", "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command to open the Gmail app
+subprocess.run(adb_command)
+
+sender_device(resourceId="com.google.android.gm:id/compose_button").click()
+time.sleep(2)
+sender_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("shubhampalsingh385@gmail.com")
+time.sleep(2)
+sender_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_listview_flattened_row"]/android.widget.RelativeLayout[2]').click()
+time.sleep(2)
+sender_device.xpath('//*[@resource-id="com.google.android.gm:id/wc_body_layout"]/android.webkit.WebView[1]').set_text("hello world")
+time.sleep(2)
+sender_device(resourceId="com.google.android.gm:id/send").click()
+
+time.sleep(5)
+receiver_device(resourceId="com.google.android.gm:id/widget_folder").click()
+time.sleep(6)
+if receiver_device(text="Shubham Pal Singh").exists():
+    print("Email recieved from shubham pal singh")
+else:
+    print("Email not recieved from shubham pal singh")
+
+#################################################Gmail37#########################################################################
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app on the sender device
+adb_command = ["adb", "-s", "cf611ff9", "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command to open the Gmail app
+subprocess.run(adb_command)
+
+if receiver_device(resourceId="com.google.android.gm:id/widget_folder").exists():
+    print("By default primary inbox is set")
+    
+#################################################Gmail38######################################################################
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app on the sender device
+adb_command = ["adb", "-s", "cf611ff9", "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command to open the Gmail app
+subprocess.run(adb_command)
+
+sender_device(resourceId="com.google.android.gm:id/compose_button").click()
+time.sleep(2)
+sender_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("shubhampalsingh385@gmail.com")
+time.sleep(2)
+sender_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_listview_flattened_row"]/android.widget.RelativeLayout[2]').click()
+time.sleep(2)
+sender_device.xpath('//*[@resource-id="com.google.android.gm:id/wc_body_layout"]/android.webkit.WebView[1]').set_text("hello world")
+time.sleep(2)
+sender_device(resourceId="com.google.android.gm:id/send").click()
+
+time.sleep(5)
+receiver_device(resourceId="com.google.android.gm:id/widget_folder").click()
+time.sleep(6)
+sender_device.press("home")
+time.sleep(2)
+sender_device(text="Phone").click()
+time.sleep(2)
+sender_device(resourceId='com.google.android.dialer:id/dialpad_fab').click()
+sender_device(text='8').click()
+sender_device(text='4').click()
+sender_device(text='4').click()
+sender_device(text='8').click()
+sender_device(text='6').click()
+sender_device(text='9').click()
+sender_device(text='7').click()
+sender_device(text='4').click()
+sender_device(text='8').click()
+sender_device(text='8').click()
+sender_device(resourceId="com.google.android.dialer:id/dialpad_voice_call_button").click()
+time.sleep(60)
+receiver_device(resourceId="com.android.dialer:id/incall_end_call").click()
+if receiver_device(text="Shubham Pal Singh").exists():
+    print("Email recieved from shubham pal singh")
+else:
+    print("Email not recieved from shubham pal singh")
+    
+######################################################Gmail39##################################################################
+
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app on the sender device
+adb_command = ["adb", "-s", "cf611ff9", "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command to open the Gmail app
+subprocess.run(adb_command)
+
+sender_device(resourceId="com.google.android.gm:id/compose_button").click()
+time.sleep(2)
+sender_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("shubhampalsingh385@gmail.com")
+time.sleep(2)
+sender_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_listview_flattened_row"]/android.widget.RelativeLayout[2]').click()
+time.sleep(2)
+sender_device.xpath('//*[@resource-id="com.google.android.gm:id/wc_body_layout"]/android.webkit.WebView[1]').set_text("hello world")
+time.sleep(2)
+sender_device(resourceId="com.google.android.gm:id/send").click()
+
+time.sleep(5)
+receiver_device(resourceId="com.google.android.gm:id/widget_folder").click()
+time.sleep(6)
+sender_device.press("home")
+time.sleep(2)
+sender_device(text="Phone").click()
+time.sleep(2)
+sender_device(resourceId='com.google.android.dialer:id/dialpad_fab').click()
+sender_device(text='8').click()
+sender_device(text='4').click()
+sender_device(text='4').click()
+sender_device(text='8').click()
+sender_device(text='6').click()
+sender_device(text='9').click()
+sender_device(text='7').click()
+sender_device(text='4').click()
+sender_device(text='8').click()
+sender_device(text='8').click()
+sender_device(resourceId="com.google.android.dialer:id/dialpad_voice_call_button").click()
+time.sleep(60)
+receiver_device(resourceId="com.android.dialer:id/incall_end_call").click()
+if receiver_device(text="Shubham Pal Singh").exists():
+    print("Email recieved from shubham pal singh")
+else:
+    print("Email not recieved from shubham pal singh")
+    
+####################################################Gmail40###################################################################
+
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app on the sender device
+adb_command = ["adb", "-s", "cf611ff9", "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command to open the Gmail app
+subprocess.run(adb_command)
+
+sender_device(resourceId="com.google.android.gm:id/compose_button").click()
+time.sleep(2)
+sender_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("shubhampalsingh385@gmail.com")
+time.sleep(2)
+sender_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_listview_flattened_row"]/android.widget.RelativeLayout[2]').click()
+time.sleep(2)
+sender_device.xpath('//*[@resource-id="com.google.android.gm:id/wc_body_layout"]/android.webkit.WebView[1]').set_text("hello world")
+time.sleep(2)
+sender_device(resourceId="com.google.android.gm:id/send").click()
+
+time.sleep(5)
+receiver_device(resourceId="com.google.android.gm:id/widget_folder").click()
+time.sleep(6)
+receiver_device(text="Shubham Pal Singh").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/reply").click()
+if receiver_device(text="Shubham Pal Singh").exists():
+    print("Email recieved from shubham pal singh")
+else:
+    print("Email not recieved from shubham pal singh")
+    
+################################################Gmail41#########################################################################
+
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.168.126:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app on the sender device
+adb_command = ["adb", "-s", "cf611ff9", "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command to open the Gmail app
+subprocess.run(adb_command)
+
+sender_device(resourceId="com.google.android.gm:id/compose_button").click()
+time.sleep(2)
+sender_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("shubhampalsingh385@gmail.com")
+time.sleep(2)
+sender_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_listview_flattened_row"]/android.widget.RelativeLayout[2]').click()
+time.sleep(2)
+sender_device.xpath('//*[@resource-id="com.google.android.gm:id/wc_body_layout"]/android.webkit.WebView[1]').set_text("hello world")
+time.sleep(2)
+sender_device(resourceId="com.google.android.gm:id/send").click()
+
+time.sleep(5)
+receiver_device(resourceId="com.google.android.gm:id/widget_folder").click()
+time.sleep(10)
+receiver_device(text="Shubham Pal Singh").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/archive").click()
+time.sleep(2)
+print("The mail is archived")
+
+###########################################################Gmail42#############################################################
+
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/compose_button").click()
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("shubhampalsingh385@gmail.com")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/peoplekit_listview_contact_method").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/subject").set_text("welcome mail")
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/wc_body_layout"]/android.webkit.WebView[1]').set_text("hello i am shubham pal singh")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/send").click()
+print("The mail is sent when usb is connected")
+
+######################################################Gmail43#################################################################
+
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/compose_button").click()
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("shubhampalsingh385@gmail.com")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/peoplekit_listview_contact_method").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/subject").set_text("welcome mail")
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/wc_body_layout"]/android.webkit.WebView[1]').set_text("hello i am shubham pal singh")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/send").click()
+print("The mail is sent when usb is connected")
+receiver_device.press("home")
+# Define the initial swipe coordinates
+start_x = 500
+start_y = 500
+end_y = 1500
+swipe_duration = 0.5
+
+
+# Perform multiple swipes to scroll the screen downwards
+num_swipes = 1  # Adjust the number of swipes as needed
+for _ in range(num_swipes):
+    receiver_device.swipe(start_x, start_y, start_x, end_y, duration=swipe_duration)
+    time.sleep(1)  # Adjust the delay between swipes if necessary
+receiver_device.xpath('//*[@resource-id="com.android.systemui:id/notification_stack_scroller"]/android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.widget.RelativeLayout[1]/android.widget.Button[1]/android.widget.LinearLayout[1]/android.widget.ImageView[1]').click()
+time.sleep(2)
+receiver_device(resourceId="com.android.systemui:id/notification_title", text="Charging this device via USB").click()
+time.sleep(2)
+receiver_device(resourceId="android:id/title", text="File transfer").click()
+time.sleep(2)
+receiver_device(resourceId="com.android.systemui:id/center_group").click()
+
+#######################################################Gmail44#################################################################
+
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/compose_button").click()
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("shubhampalsingh385@gmail.com")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/peoplekit_listview_contact_method").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/subject").set_text("welcome mail")
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/wc_body_layout"]/android.webkit.WebView[1]').set_text("hello i am shubham pal singh")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/send").click()
+print("The mail is sent when usb is connected")
+receiver_device.press("home")
+# Define the initial swipe coordinates
+start_x = 500
+start_y = 500
+end_y = 1500
+swipe_duration = 0.5
+
+# Perform multiple swipes to scroll the screen downwards
+num_swipes = 5
+for _ in range(num_swipes):
+    receiver_device.swipe(start_x, start_y, start_x, end_y, duration=swipe_duration)
+    time.sleep(1)
+
+# Click on the Bluetooth tile in the system UI
+receiver_device(resourceId="com.android.systemui:id/tile_label", text="Bluetooth").click()
+time.sleep(2)
+
+# Long-click on the Bluetooth tile
+receiver_device(resourceId="com.android.systemui:id/tile_label", text="Bluetooth").long_click()
+time.sleep(2)
+
+# Click on the "Pair new device" option
+receiver_device(resourceId="android:id/title", text="Pair new device").click()
+
+# Check for the presence of a specific device ("OnePlus 9 Pro 5G") and initiate the pairing process
+num_swipes = 100
+for _ in range(num_swipes):
+    if receiver_device(resourceId="android:id/title", text="OnePlus 9 Pro 5G").exists():
+        receiver_device(resourceId="android:id/title", text="OnePlus 9 Pro 5G").click()
+        time.sleep(1)
+        receiver_deviced(resourceId="android:id/button2").click()
+        print("Bluetooth not paired")
+        break
+    else:
+        print("Bluetooth paired")
+    time.sleep(1)
+    
+#################################################Gmail46######################################################################
+
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/compose_button").click()
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("shubhampalsingh385@gmail.com")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/peoplekit_listview_contact_method").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/subject").set_text("welcome mail")
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/wc_body_layout"]/android.webkit.WebView[1]').set_text("hello i am shubham pal singh")
+time.sleep(2)
+receiver_device.press("home")
+sender_device(text="Messages").click()
+time.sleep(2)
+sender_device(resourceId="com.google.android.apps.messaging:id/start_chat_fab").click()
+time.sleep(2)
+sender_device(text="Abc").click()
+time.sleep(2)
+sender_device(text="Mobile85277 46897").click()
+
+time.sleep(2)
+
+num_runs = 10
+for run in range(num_runs):
+    sender_device(resourceId="com.google.android.apps.messaging:id/compose_message_text").set_text("hello")
+    time.sleep(2)
+    sender_device(resourceId="com.google.android.apps.messaging:id/send_message_button_container").click()
+    time.sleep(60)
+    
+##################################################Gmail47####################################################################
+
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/compose_button").click()
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("shubhampalsingh385@gmail.com")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/peoplekit_listview_contact_method").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/subject").set_text("welcome mail")
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/wc_body_layout"]/android.webkit.WebView[1]').set_text("hello i am shubham pal singh")
+time.sleep(2)
+receiver_device.press("home")
+sender_device(text="Messages").click()
+time.sleep(2)
+sender_device(resourceId="com.google.android.apps.messaging:id/start_chat_fab").click()
+time.sleep(2)
+sender_device(text="AAAAA").click()
+time.sleep(2)
+sender_device(text="Mobile+91 84486 97488").click()
+
+time.sleep(2)
+
+num_runs = 10
+for run in range(num_runs):
+    sender_device(resourceId="com.google.android.apps.messaging:id/compose_message_text").set_text("hello")
+    time.sleep(2)
+    sender_device(resourceId="com.google.android.apps.messaging:id/send_message_button_container").click()
+    time.sleep(60)
+    
+##################################################Gmail48#####################################################################
+
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+from datetime import datetime, timedelta
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/compose_button").click()
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("shubhampalsingh385@gmail.com")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/peoplekit_listview_contact_method").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/subject").set_text("welcome mail")
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/wc_body_layout"]/android.webkit.WebView[1]').set_text("hello i am shubham pal singh")
+time.sleep(2)
+receiver_device.press("home")
+sender_device(text="Messages").click()
+time.sleep(2)
+sender_device(resourceId="com.google.android.apps.messaging:id/start_chat_fab").click()
+time.sleep(2)
+sender_device(text="AAAAA").click()
+time.sleep(2)
+sender_device(text="Mobile+91 84486 97488").click()
+
+time.sleep(2)
+
+num_runs = 10
+for run in range(num_runs):
+    sender_device(resourceId="com.google.android.apps.messaging:id/compose_message_text").set_text("hello")
+    time.sleep(2)
+    sender_device(resourceId="com.google.android.apps.messaging:id/send_message_button_container").click()
+    time.sleep(10)
+
+    # Define the initial swipe coordinates
+start_x = 500
+start_y = 500
+end_y = 1500
+swipe_duration = 0.5
+
+# Perform multiple swipes to scroll the screen downwards
+num_swipes = 1
+for _ in range(num_swipes):
+    receiver_device.swipe(start_x, start_y, start_x, end_y, duration=swipe_duration)
+    time.sleep(1)
+
+receiver_device(resourceId="com.android.systemui:id/dismiss_text").click()
+print("The messages are cleared")
+
+###################################################Gmail52###################################################################
+
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+from datetime import datetime, timedelta
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/compose_button").click()
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("shubhampalsingh385@gmail.com")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/peoplekit_listview_contact_method").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/subject").set_text("welcome mail")
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/wc_body_layout"]/android.webkit.WebView[1]').set_text("hello i am shubham pal singh")
+time.sleep(2)
+receiver_device.press("home")
+# Get the current app package and activity
+current_app = receiver_device.current_app()
+# Get the current time
+current_time = datetime.now()
+
+# Calculate the alarm time (5 minutes from the current time)
+alarm_time = current_time + timedelta(minutes=5)
+print(alarm_time)
+
+# Extract the hour and minute from the alarm time
+hour = str(alarm_time.hour)
+minute = str(alarm_time.minute)
+
+# Open the Clock app
+receiver_device.press("home")
+receiver_device(scrollable=True).scroll.toEnd()
+time.sleep(2)
+receiver_device(resourceId="com.android.launcher3:id/icon", text="Clock").click()
+# Set the alarm time
+receiver_device(resourceId="com.google.android.deskclock:id/fab").click()
+time.sleep(2)
+
+# Locate the text box for entering the hour value and click on it
+receiver_device.xpath('//*[@resource-id="com.google.android.deskclock:id/material_hour_text_input"]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]')
+text_box1 = receiver_device.xpath('//*[@resource-id="com.google.android.deskclock:id/material_hour_text_input"]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]')
+if text_box1.exists:
+    receiver_device.click(0.437, 0.911)
+    receiver_device.send_keys(hour)
+    
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.deskclock:id/material_minute_text_input"]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]').click()
+text_box2 = receiver_device.xpath('//*[@resource-id="com.google.android.deskclock:id/material_minute_text_input"]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]')
+if text_box2.exists:
+    receiver_device.click(0.437, 0.911)
+    receiver_device.send_keys(minute)
+
+receiver_device(text="OK").click()
+time.sleep(2)
+receiver_device(text="OK").click()
+time.sleep(2)
+receiver_device(resourceId="com.android.systemui:id/center_group").click()
+time.sleep(300)
+num_runs = 5  # Stop the alarm after 5 seconds (adjust as needed)
+for run in range(num_runs):
+    time.sleep(1)
+    if receiver_device(text="Alarm").exists():
+        receiver_device(text="STOP").click()
+
+print("Alarm stopped")
+
+##################################################Gmail53#####################################################################
+
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+from datetime import datetime, timedelta
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/compose_button").click()
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("shubhampalsingh385@gmail.com")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/peoplekit_listview_contact_method").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/subject").set_text("welcome mail")
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/wc_body_layout"]/android.webkit.WebView[1]').set_text("hello i am shubham pal singh")
+time.sleep(2)
+receiver_device.press("home")
+time.sleep(10)
+
+sender_device(text="Phone").click()
+time.sleep(2)
+sender_device(resourceId="com.google.android.dialer:id/dialpad_fab").click()
+sender_device(text='8').click()
+sender_device(text='4').click()
+sender_device(text='4').click()
+sender_device(text='8').click()
+sender_device(text='6').click()
+sender_device(text='9').click()
+sender_device(text='7').click()
+sender_device(text='4').click()
+sender_device(text='8').click()
+sender_device(text='8').click()
+sender_device(resourceId="com.google.android.dialer:id/dialpad_voice_call_button").click()
+time.sleep(2)
+receiver_device(resourceId="android:id/action0", text="DECLINE").click()
+
+#########################################################Gmail54#############################################################
+
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+from datetime import datetime, timedelta
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/compose_button").click()
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("shubhampalsingh385@gmail.com")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/peoplekit_listview_contact_method").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/subject").set_text("welcome mail")
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/wc_body_layout"]/android.webkit.WebView[1]').set_text("hello i am shubham pal singh")
+time.sleep(2)
+receiver_device.press("home")
+time.sleep(10)
+
+sender_device(text="Phone").click()
+time.sleep(2)
+sender_device(resourceId="com.google.android.dialer:id/dialpad_fab").click()
+sender_device(text='8').click()
+sender_device(text='4').click()
+sender_device(text='4').click()
+sender_device(text='8').click()
+sender_device(text='6').click()
+sender_device(text='9').click()
+sender_device(text='7').click()
+sender_device(text='4').click()
+sender_device(text='8').click()
+sender_device(text='8').click()
+sender_device(resourceId="com.google.android.dialer:id/dialpad_voice_call_button").click()
+time.sleep(2)
+receiver_device(resourceId="android:id/action0", text="ANSWER").click()
+
+###########################################################Gmail55#############################################################
+
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+from datetime import datetime, timedelta
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device_serial = 'cf611ff9'  # Use the actual sender device serial number as a string
+sender_device = ui2.Device(sender_device_serial)
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', sender_device_serial, 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', sender_device_serial, 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", sender_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+sender_device(resourceId="com.google.android.gm:id/compose_button").click()
+time.sleep(2)
+sender_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("shubhampalsingh385@gmail.com")
+time.sleep(2)
+sender_device(resourceId="com.google.android.gm:id/peoplekit_listview_contact_method").click()
+time.sleep(2)
+sender_device(resourceId="com.google.android.gm:id/subject").set_text("welcome mail")
+time.sleep(2)
+sender_device.xpath('//*[@resource-id="com.google.android.gm:id/wc_body_layout"]/android.webkit.WebView[1]').set_text("hello i am shubham pal singh")
+time.sleep(2)
+
+sender_device.press("home")
+time.sleep(10)
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+
+#########################################################Gmail57###############################################################
+
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app on the sender device
+adb_command = ["adb", "-s", "cf611ff9", "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command to open the Gmail app
+subprocess.run(adb_command)
+
+sender_device(resourceId="com.google.android.gm:id/compose_button").click()
+time.sleep(2)
+sender_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("shubhampalsingh385@gmail.com")
+time.sleep(2)
+sender_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_listview_flattened_row"]/android.widget.RelativeLayout[2]').click()
+time.sleep(2)
+sender_device.xpath('//*[@resource-id="com.google.android.gm:id/wc_body_layout"]/android.webkit.WebView[1]').set_text("hello world")
+time.sleep(2)
+sender_device(resourceId="com.google.android.gm:id/send").click()
+
+time.sleep(5)
+receiver_device(resourceId="com.google.android.gm:id/widget_folder").click()
+time.sleep(6)
+receiver_device(text="Shubham Pal Singh").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/reply").click()
+if receiver_device(text="Shubham Pal Singh").exists():
+    print("Email recieved from shubham pal singh")
+else:
+    print("Email not recieved from shubham pal singh")
+    
+#################################################Gmail58#####################################################################
+
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.168.126:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app on the sender device
+adb_command = ["adb", "-s", "cf611ff9", "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command to open the Gmail app
+subprocess.run(adb_command)
+
+sender_device(resourceId="com.google.android.gm:id/compose_button").click()
+time.sleep(2)
+sender_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("shubhampalsingh385@gmail.com")
+time.sleep(2)
+sender_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_listview_flattened_row"]/android.widget.RelativeLayout[2]').click()
+time.sleep(2)
+sender_device.xpath('//*[@resource-id="com.google.android.gm:id/wc_body_layout"]/android.webkit.WebView[1]').set_text("hello world")
+time.sleep(2)
+sender_device(resourceId="com.google.android.gm:id/send").click()
+
+time.sleep(5)
+receiver_device(resourceId="com.google.android.gm:id/widget_folder").click()
+time.sleep(10)
+receiver_device(text="Shubham Pal Singh").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/archive").click()
+time.sleep(2)
+print("The mail is archived")
+
+#######################################################Gmail60################################################################
+
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/compose_button").click()
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("shubhampalsingh385@gmail.com")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/peoplekit_listview_contact_method").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/subject").set_text("welcome mail")
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/wc_body_layout"]/android.webkit.WebView[1]').set_text("hello i am shubham pal singh")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/send").click()
+print("The mail is sent when usb is connected")
+receiver_device.press("home")
+# Define the initial swipe coordinates
+start_x = 500
+start_y = 500
+end_y = 1500
+swipe_duration = 0.5
+
+
+# Perform multiple swipes to scroll the screen downwards
+num_swipes = 1  # Adjust the number of swipes as needed
+for _ in range(num_swipes):
+    receiver_device.swipe(start_x, start_y, start_x, end_y, duration=swipe_duration)
+    time.sleep(1)  # Adjust the delay between swipes if necessary
+receiver_device.xpath('//*[@resource-id="com.android.systemui:id/notification_stack_scroller"]/android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.widget.RelativeLayout[1]/android.widget.Button[1]/android.widget.LinearLayout[1]/android.widget.ImageView[1]').click()
+time.sleep(2)
+receiver_device(resourceId="com.android.systemui:id/notification_title", text="Charging this device via USB").click()
+time.sleep(2)
+receiver_device(resourceId="android:id/title", text="File transfer").click()
+time.sleep(2)
+receiver_device(resourceId="com.android.systemui:id/center_group").click()
+
+######################################################Gmail66################################################################
+
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+from datetime import datetime, timedelta
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device_serial = 'cf611ff9'  # Use the actual sender device serial number as a string
+sender_device = ui2.Device(sender_device_serial)
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', sender_device_serial, 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', sender_device_serial, 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", sender_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# ADB commands to simulate volume up and volume down key events
+volume_up_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '24']
+volume_down_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '25']
+
+# Simulate volume up
+subprocess.run(volume_up_command)
+
+# Simulate volume down
+subprocess.run(volume_down_command)
+
+#######################################################Gmail102##############################################################
+
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+from datetime import datetime, timedelta
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Device serial number of the sender device
+sender_device_serial = 'cf611ff9'  # Use the actual sender device serial number as a string
+
+# Create a Device object for the sender device
+sender_device = ui2.connect(sender_device_serial)
+
+# Create a Device object for the receiver device
+receiver_device = ui2.connect(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', sender_device_serial, 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', sender_device_serial, 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app on the sender device
+sender_adb_command = ["adb", "-s", sender_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# ADB command to start the Gmail app on the receiver device
+receiver_adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s",receiver_device_serial , "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/subject", text="Offer Letter l Galgotias University").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/attachment_tile_thumbnail").click()
+time.sleep(2)
+receiver_device.xpath('//android.support.v7.widget.LinearLayoutCompat/android.widget.ImageView[1]').click()
+time.sleep(2)
+receiver_device.xpath('//android.widget.ListView/android.widget.LinearLayout[2]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]').click()
+time.sleep(2)
+sender_device(text="Phone").click()
+time.sleep(2)
+sender_device(resourceId='com.google.android.dialer:id/dialpad_fab').click()
+sender_device(text='8').click()
+sender_device(text='4').click()
+sender_device(text='4').click()
+sender_device(text='8').click()
+sender_device(text='6').click()
+sender_device(text='9').click()
+sender_device(text='7').click()
+sender_device(text='4').click()
+sender_device(text='8').click()
+sender_device(text='8').click()
+sender_device(resourceId="com.google.android.dialer:id/dialpad_voice_call_button").click()
+time.sleep(5)
+receiver_device(resourceId="android:id/action0", text="DECLINE").click()
+
+##################################################Gmail103#####################################################################
+
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+from datetime import datetime, timedelta
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Device serial number of the sender device
+sender_device_serial = 'cf611ff9'  # Use the actual sender device serial number as a string
+
+# Create a Device object for the sender device
+sender_device = ui2.connect(sender_device_serial)
+
+# Create a Device object for the receiver device
+receiver_device = ui2.connect(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', sender_device_serial, 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', sender_device_serial, 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app on the sender device
+sender_adb_command = ["adb", "-s", sender_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# ADB command to start the Gmail app on the receiver device
+receiver_adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s",receiver_device_serial , "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/subject", text="Offer Letter l Galgotias University").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/attachment_tile_thumbnail").click()
+time.sleep(2)
+receiver_device.xpath('//android.support.v7.widget.LinearLayoutCompat/android.widget.ImageView[1]').click()
+time.sleep(2)
+receiver_device.xpath('//android.widget.ListView/android.widget.LinearLayout[2]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]').click()
+time.sleep(2)
+sender_device(text="Phone").click()
+time.sleep(2)
+sender_device(resourceId='com.google.android.dialer:id/dialpad_fab').click()
+sender_device(text='8').click()
+sender_device(text='4').click()
+sender_device(text='4').click()
+sender_device(text='8').click()
+sender_device(text='6').click()
+sender_device(text='9').click()
+sender_device(text='7').click()
+sender_device(text='4').click()
+sender_device(text='8').click()
+sender_device(text='8').click()
+sender_device(resourceId="com.google.android.dialer:id/dialpad_voice_call_button").click()
+time.sleep(5)
+receiver_device(resourceId="android:id/action0", text="ANSWER").click()
+
+#################################################Gmail104####################################################################
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+from datetime import datetime, timedelta
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Device serial number of the sender device
+sender_device_serial = 'cf611ff9'  # Use the actual sender device serial number as a string
+
+# Create a Device object for the sender device
+sender_device = ui2.connect(sender_device_serial)
+
+# Create a Device object for the receiver device
+receiver_device = ui2.connect(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', sender_device_serial, 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', sender_device_serial, 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app on the sender device
+sender_adb_command = ["adb", "-s", sender_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# ADB command to start the Gmail app on the receiver device
+receiver_adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s",receiver_device_serial , "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/subject", text="Offer Letter l Galgotias University").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/attachment_tile_thumbnail").click()
+time.sleep(2)
+receiver_device.xpath('//android.support.v7.widget.LinearLayoutCompat/android.widget.ImageView[1]').click()
+time.sleep(2)
+receiver_device.xpath('//android.widget.ListView/android.widget.LinearLayout[2]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]').click()
+time.sleep(2)
+receiver_device(resourceId="com.android.systemui:id/back").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/overflow").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/overflow").click()
+time.sleep(2)
+receiver_device.xpath('//android.widget.ListView/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]').click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/send").click()
+
+######################################################Gmail108################################################################
+
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+from datetime import datetime, timedelta
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Device serial number of the sender device
+sender_device_serial = 'cf611ff9'  # Use the actual sender device serial number as a string
+
+# Create a Device object for the sender device
+sender_device = ui2.connect(sender_device_serial)
+
+# Create a Device object for the receiver device
+receiver_device = ui2.connect(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', sender_device_serial, 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', sender_device_serial, 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app on the sender device
+sender_adb_command = ["adb", "-s", sender_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# ADB command to start the Gmail app on the receiver device
+receiver_adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s",receiver_device_serial , "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/subject", text="Offer Letter l Galgotias University").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/attachment_tile_thumbnail").click()
+time.sleep(2)
+receiver_device.xpath('//android.support.v7.widget.LinearLayoutCompat/android.widget.ImageView[1]').click()
+time.sleep(2)
+receiver_device.xpath('//android.widget.ListView/android.widget.LinearLayout[2]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]').click()
+time.sleep(2)
+receiver_device(resourceId="com.android.systemui:id/back").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/overflow").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/overflow").click()
+time.sleep(2)
+receiver_device.xpath('//android.widget.ListView/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]').click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/archive").click()
+
+###############################################################Gmail109#######################################################
+# Import necessary modules
+import uiautomator2 as ui2
+import time
+import subprocess
+
+# Device serial number of the receiver device
+receiver_device_serial = "192.168.2.39:5555"
+
+# Create a Device object for the sender device
+sender_device = ui2.Device('cf611ff9')
+
+# Create a Device object for the receiver device
+receiver_device = ui2.Device(receiver_device_serial)
+
+# ADB commands to turn on the receiver and sender devices' screens
+receiver_turn_on_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '224']
+sender_turn_on_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '224']
+
+# ADB commands to turn off the receiver and sender devices' screens
+receiver_turn_off_command = ['adb', '-s', receiver_device_serial, 'shell', 'input', 'keyevent', '26']
+sender_turn_off_command = ['adb', '-s', 'cf611ff9', 'shell', 'input', 'keyevent', '26']
+
+# Define the package name and activity name of the Gmail app
+package_name = "com.google.android.gm"
+activity_name = "com.google.android.gm.ConversationListActivityGmail"
+
+# ADB command to start the Gmail app
+adb_command = ["adb", "-s", receiver_device_serial, "shell", "am", "start", "-n", f"{package_name}/{activity_name}"]
+
+# Execute the ADB command
+subprocess.run(adb_command)
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/compose_button").click()
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText[1]').set_text("shubhampalsingh385@gmail.com")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/peoplekit_listview_contact_method").click()
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/subject").set_text("welcome mail")
+time.sleep(2)
+receiver_device.xpath('//*[@resource-id="com.google.android.gm:id/wc_body_layout"]/android.webkit.WebView[1]').set_text("hello i am shubham pal singh")
+time.sleep(2)
+receiver_device(resourceId="com.google.android.gm:id/send").click()
+print("The mail is sent when usb is connected")
+receiver_device.press("home")
+# Define the initial swipe coordinates
+start_x = 500
+start_y = 500
+end_y = 1500
+swipe_duration = 0.5
+
+
+# Perform multiple swipes to scroll the screen downwards
+num_swipes = 1  # Adjust the number of swipes as needed
+for _ in range(num_swipes):
+    receiver_device.swipe(start_x, start_y, start_x, end_y, duration=swipe_duration)
+    time.sleep(1)  # Adjust the delay between swipes if necessary
+receiver_device.xpath('//*[@resource-id="com.android.systemui:id/notification_stack_scroller"]/android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.widget.RelativeLayout[1]/android.widget.Button[1]/android.widget.LinearLayout[1]/android.widget.ImageView[1]').click()
+time.sleep(2)
+receiver_device(resourceId="com.android.systemui:id/notification_title", text="Charging this device via USB").click()
+time.sleep(2)
+receiver_device(resourceId="android:id/title", text="File transfer").click()
+time.sleep(2)
+receiver_device(resourceId="com.android.systemui:id/center_group").click()
